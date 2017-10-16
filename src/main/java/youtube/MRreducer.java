@@ -32,21 +32,21 @@ public class MRreducer  extends Reducer <Text,Text,Text,Text> {
 			if (most_views == null || !most_views.containsKey(temp_category_id)) { 
 				most_views.put(temp_category_id, compositeStringArray);
 			}
-			else if (Integer.parseInt(most_views.get(temp_category_id)[1]) > temp_views)
+			else if (Integer.parseInt(most_views.get(temp_category_id)[1]) < temp_views)
 				most_views.put(temp_category_id, compositeStringArray);
 
 			// update most_likes
 			if (most_likes == null || !most_likes.containsKey(temp_category_id)) { 
 				most_likes.put(temp_category_id, compositeStringArray);
 			}
-			else if (Integer.parseInt(most_likes.get(temp_category_id)[2]) > temp_likes)
+			else if (Integer.parseInt(most_likes.get(temp_category_id)[2]) < temp_likes)
 				most_likes.put(temp_category_id, compositeStringArray);
 
 			// update most_dislikes
 			if (most_dislikes == null || !most_dislikes.containsKey(temp_category_id)) { 
 				most_dislikes.put(temp_category_id, compositeStringArray);
 			}
-			else if (Integer.parseInt(most_dislikes.get(temp_category_id)[3]) > temp_dislikes)
+			else if (Integer.parseInt(most_dislikes.get(temp_category_id)[3]) < temp_dislikes)
 				most_dislikes.put(temp_category_id, compositeStringArray);
 		}
 
