@@ -1,5 +1,9 @@
 #!/bin/bash
 
+source ~/.bashrc
+if [ -d "classes" ]; then
+  mv classes classes_old
+fi
 mkdir classes
 javac -d classes MRmapper.java
 javac -d classes MRreducer.java
